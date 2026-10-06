@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Alida ♡</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 190, 215, .35),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(255, 220, 170, .25),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff8fb,
+                    #fce8f0 50%,
+                    #fff5e8
+                );
+
+            color: #5a3b48;
+            position: relative;
+        }
+
+
+        /* ==============================
+           SPARKLES
+        ============================== */
+
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+
+            background: #d6a85f;
+            border-radius: 50%;
+
+            opacity: .6;
+
+            animation: twinkle 3s infinite ease-in-out;
+
+            pointer-events: none;
+        }
+
+        .sparkle:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: .3s;
+        }
+
+        .sparkle:nth-child(2) {
+            top: 17%;
+            left: 85%;
+            animation-delay: 1s;
+        }
+
+        .sparkle:nth-child(3) {
+            top: 75%;
+            left: 8%;
+            animation-delay: 1.7s;
+        }
+
+        .sparkle:nth-child(4) {
+            top: 87%;
+            left: 88%;
+            animation-delay: 2.2s;
+        }
+
+        .sparkle:nth-child(5) {
+            top: 45%;
+            left: 94%;
+            animation-delay: .8s;
+        }
+
+        .sparkle:nth-child(6) {
+            top: 7%;
+            left: 50%;
+            animation-delay: 1.4s;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                transform: scale(.5);
+                opacity: .2;
+            }
+
+            50% {
+                transform: scale(1.7);
+                opacity: 1;
+            }
+        }
+
+
+        /* ==============================
+           HEARTS
+        ============================== */
+
+        .heart {
+            position: fixed;
+            font-size: 18px;
+            opacity: .22;
+
+            animation:
+                floatHeart 8s linear infinite;
+
+            pointer-events: none;
+        }
+
+        .heart:nth-child(7) {
+            left: 12%;
+            bottom: -30px;
+        }
+
+        .heart:nth-child(8) {
+            left: 32%;
+            bottom: -30px;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(9) {
+            left: 65%;
+            bottom: -30px;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(10) {
+            left: 84%;
+            bottom: -30px;
+            animation-delay: 6s;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .3;
+            }
+
+            85% {
+                opacity: .25;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* ==============================
+           CONTAINER
+        ============================== */
+
+        .container {
+            width: min(94%, 620px);
+
+            padding: 42px 25px;
+
+            text-align: center;
+
+            position: relative;
+
+            background:
+                rgba(255,255,255,.68);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            border:
+                1px solid
+                rgba(210,160,95,.35);
+
+            border-radius: 32px;
+
+            box-shadow:
+                0 25px 70px
+                rgba(126,74,92,.15),
+
+                inset 0 1px 0
+                rgba(255,255,255,.8);
+
+            animation:
+                appear 1.2s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform:
+                    translateY(25px)
+                    scale(.97);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* ==============================
+           GOLD CORNERS
+        ============================== */
+
+        .corner {
+            position: absolute;
+
+            width: 45px;
+            height: 45px;
+
+            border-color:
+                rgba(190,140,65,.55);
+        }
+
+        .corner.tl {
+            top: 18px;
+            left: 18px;
+
+            border-top: 1px solid;
+            border-left: 1px solid;
+
+            border-radius: 12px 0 0 0;
+        }
+
+        .corner.tr {
+            top: 18px;
+            right: 18px;
+
+            border-top: 1px solid;
+            border-right: 1px solid;
+
+            border-radius: 0 12px 0 0;
+        }
+
+        .corner.bl {
+            bottom: 18px;
+            left: 18px;
+
+            border-bottom: 1px solid;
+            border-left: 1px solid;
+
+            border-radius: 0 0 0 12px;
+        }
+
+        .corner.br {
+            bottom: 18px;
+            right: 18px;
+
+            border-bottom: 1px solid;
+            border-right: 1px solid;
+
+            border-radius: 0 0 12px 0;
+        }
+
+
+        /* ==============================
+           TEXT
+        ============================== */
+
+        .top-text {
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #b48a4d;
+
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(34px, 8vw, 50px);
+
+            font-weight: 600;
+
+            color: #633e50;
+
+            line-height: 1;
+
+            margin-bottom: 7px;
+        }
+
+        .name {
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 22px;
+
+            color: #9b6c7d;
+
+            margin-bottom: 22px;
+        }
+
+        .message {
+            font-size: 12px;
+
+            font-weight: 300;
+
+            color: #806471;
+
+            line-height: 1.8;
+
+            max-width: 430px;
+
+            margin:
+                0 auto 25px;
+        }
+
+
+        /* ==============================
+           VIDEO
+        ============================== */
+
+        .video-wrapper {
+            position: relative;
+
+            width: min(100%, 390px);
+
+            margin: 0 auto;
+
+            padding: 9px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f4d59e,
+                    #c79655,
+                    #f5dcae,
+                    #bb8848
+                );
+
+            box-shadow:
+                0 20px 45px
+                rgba(130,85,55,.22);
+        }
+
+        .video-inner {
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 9 / 16;
+
+            overflow: hidden;
+
+            border-radius: 17px;
+
+            background: #241b20;
+
+            border:
+                2px solid
+                rgba(255,255,255,.65);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+
+        /* ==============================
+           VIDEO DECORATION
+        ============================== */
+
+        .video-decoration {
+            position: absolute;
+
+            z-index: 3;
+
+            color: #f8dfaa;
+
+            font-size: 18px;
+
+            text-shadow:
+                0 2px 8px
+                rgba(0,0,0,.4);
+
+            pointer-events: none;
+        }
+
+        .video-decoration.top-left {
+            top: 13px;
+            left: 13px;
+        }
+
+        .video-decoration.top-right {
+            top: 13px;
+            right: 13px;
+        }
+
+        .video-decoration.bottom-left {
+            bottom: 13px;
+            left: 13px;
+        }
+
+        .video-decoration.bottom-right {
+            bottom: 13px;
+            right: 13px;
+        }
+
+
+        /* ==============================
+           AFTER VIDEO
+        ============================== */
+
+        .after-video {
+            margin-top: 25px;
+
+            opacity: 0;
+
+            transform:
+                translateY(12px);
+
+            pointer-events: none;
+
+            transition:
+                all .8s ease;
+        }
+
+        .after-video.show {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+            pointer-events: auto;
+        }
+
+        .gold-line {
+            width: 75px;
+            height: 1px;
+
+            margin:
+                0 auto 16px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #c69b55,
+                    transparent
+                );
+        }
+
+        .after-text {
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size: 20px;
+
+            color: #8d5b70;
+
+            font-style: italic;
+
+            margin-bottom: 17px;
+        }
+
+
+        /* ==============================
+           NEXT BUTTON
+        ============================== */
+
+        .next-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding:
+                13px 28px;
+
+            border-radius: 50px;
+
+            border:
+                1px solid
+                rgba(190,140,65,.4);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d9a968,
+                    #c99353
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            box-shadow:
+                0 10px 25px
+                rgba(170,115,60,.25);
+
+            transition:
+                .3s ease;
+        }
+
+        .next-button:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(170,115,60,.35);
+        }
+
+
+        /* ==============================
+           LOCK MESSAGE
+        ============================== */
+
+        .watch-text {
+            margin-top: 12px;
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+
+            color: #b28b98;
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 15px 0;
+                overflow-y: auto;
+            }
+
+            .container {
+                padding:
+                    38px 17px;
+            }
+
+            .video-wrapper {
+                width:
+                    min(100%, 350px);
+            }
+
+            .title {
+                font-size: 40px;
+            }
+
+            .name {
+                font-size: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+    <div class="heart">♡</div>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="container">
+
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+
+        <div class="top-text">
+            Finally...
+        </div>
+
+
+        <div class="title">
+            It's Your Day ♡
+        </div>
+
+
+        <div class="name">
+            Alida Ayuna Iskandar
+        </div>
+
+
+        <p class="message">
+            Kalau kamu sudah sampai di sini,
+            berarti waktunya sudah tiba.
+            Ada satu hal kecil yang ingin
+            disampaikan untuk seseorang
+            yang hari ini genap berusia
+            <b>20 tahun.</b>
+        </p>
+
+
+        <!-- =========================
+             VIDEO 9:16
+        ========================== -->
+
+        <div class="video-wrapper">
+
+            <div class="video-inner">
+
+                <div class="video-decoration top-left">
+                    ✦
+                </div>
+
+                <div class="video-decoration top-right">
+                    ♡
+                </div>
+
+                <div class="video-decoration bottom-left">
+                    ♡
+                </div>
+
+                <div class="video-decoration bottom-right">
+                    ✦
+                </div>
+
+
+                <video
+                    id="birthdayVideo"
+                    controls
+                    playsinline
+                    preload="metadata">
+
+                    <source
+                        src="video-alida.mp4"
+                        type="video/mp4">
+
+                    Browser kamu tidak mendukung video.
+
+                </video>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MUNCUL SETELAH VIDEO
+        ========================== -->
+
+        <div
+            class="after-video"
+            id="afterVideo">
+
+            <div class="gold-line"></div>
+
+            <div class="after-text">
+                “Tunggu... masih ada satu hal lagi.” ♡
+            </div>
+
+            <a
+                href="message.html"
+                class="next-button">
+
+                ✨ Lanjutkan Kejutan
+
+            </a>
+
+            <div class="watch-text">
+                ✦ Terima kasih sudah melihatnya ✦
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <script>
+
+        const video =
+            document.getElementById(
+                "birthdayVideo"
+            );
+
+        const afterVideo =
+            document.getElementById(
+                "afterVideo"
+            );
+
+
+        /*
+        ==========================================
+        TOMBOL MUNCUL SETELAH VIDEO SELESAI
+        ==========================================
+        */
+
+        video.addEventListener(
+            "ended",
+            function () {
+
+                afterVideo.classList.add(
+                    "show"
+                );
+
+                setTimeout(() => {
+
+                    afterVideo.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 200);
+
+            }
+        );
+
+
+        /*
+        ==========================================
+        JIKA VIDEO DIPUTAR LAGI
+        ==========================================
+        */
+
+        video.addEventListener(
+            "play",
+            function () {
+
+                afterVideo.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+</html>
