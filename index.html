@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>Untuk Alida Ayuna Iskandar 💗</title>
 
@@ -15,20 +16,58 @@
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
         body {
             min-height: 100vh;
-            overflow: hidden;
+            min-height: 100dvh;
+
+            /*
+                Tidak lagi hidden sepenuhnya.
+                Di HP yang pendek, halaman masih bisa digeser.
+            */
+            overflow-x: hidden;
+            overflow-y: auto;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-family: 'Poppins', sans-serif;
+
             background:
-                radial-gradient(circle at 20% 20%, rgba(255, 190, 215, .35), transparent 30%),
-                radial-gradient(circle at 80% 80%, rgba(255, 220, 170, .25), transparent 30%),
-                linear-gradient(135deg, #fff8fb, #fce8f0 50%, #fff5e8);
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 190, 215, .35),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(255, 220, 170, .25),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff8fb,
+                    #fce8f0 50%,
+                    #fff5e8
+                );
+
             color: #5a3b48;
+
             position: relative;
+
+            padding:
+                env(safe-area-inset-top)
+                env(safe-area-inset-right)
+                env(safe-area-inset-bottom)
+                env(safe-area-inset-left);
         }
+
 
         /* =========================
            BACKGROUND PARTICLES
@@ -36,13 +75,22 @@
 
         .sparkle {
             position: fixed;
+
             width: 4px;
             height: 4px;
+
             background: #d6a85f;
+
             border-radius: 50%;
+
             opacity: .6;
-            animation: twinkle 3s infinite ease-in-out;
+
+            animation:
+                twinkle 3s infinite ease-in-out;
+
+            pointer-events: none;
         }
+
 
         .sparkle:nth-child(1) {
             top: 12%;
@@ -80,8 +128,11 @@
             animation-delay: 1.4s;
         }
 
+
         @keyframes twinkle {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(.5);
                 opacity: .2;
             }
@@ -92,17 +143,24 @@
             }
         }
 
+
         /* =========================
            FLOATING HEARTS
         ========================= */
 
         .heart {
             position: fixed;
+
             font-size: 18px;
+
             opacity: .25;
-            animation: floatHeart 8s linear infinite;
+
+            animation:
+                floatHeart 8s linear infinite;
+
             pointer-events: none;
         }
+
 
         .heart:nth-child(7) {
             left: 15%;
@@ -128,9 +186,14 @@
             animation-delay: 6s;
         }
 
+
         @keyframes floatHeart {
+
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
                 opacity: 0;
             }
 
@@ -143,10 +206,14 @@
             }
 
             100% {
-                transform: translateY(-110vh) rotate(25deg);
+                transform:
+                    translateY(-110vh)
+                    rotate(25deg);
+
                 opacity: 0;
             }
         }
+
 
         /* =========================
            MAIN CARD
@@ -154,76 +221,122 @@
 
         .card {
             width: min(92%, 600px);
+
+            /*
+                Sedikit lebih fleksibel daripada sebelumnya.
+            */
             padding: 50px 35px;
+
             text-align: center;
+
             position: relative;
 
-            background: rgba(255, 255, 255, .68);
+            background:
+                rgba(255, 255, 255, .68);
+
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
 
-            border: 1px solid rgba(210, 160, 95, .35);
+            border:
+                1px solid rgba(210, 160, 95, .35);
+
             border-radius: 30px;
 
             box-shadow:
                 0 25px 70px rgba(126, 74, 92, .15),
-                inset 0 1px 0 rgba(255,255,255,.8);
+                inset 0 1px 0 rgba(255, 255, 255, .8);
 
-            animation: cardAppear 1.3s ease;
+            animation:
+                cardAppear 1.3s ease;
+
+            margin: 25px auto;
         }
 
+
         @keyframes cardAppear {
+
             from {
                 opacity: 0;
-                transform: translateY(30px) scale(.96);
+
+                transform:
+                    translateY(30px)
+                    scale(.96);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+
+                transform:
+                    translateY(0)
+                    scale(1);
             }
         }
 
-        /* GOLD CORNERS */
+
+        /* =========================
+           GOLD CORNERS
+        ========================= */
 
         .corner {
             position: absolute;
+
             width: 45px;
             height: 45px;
-            border-color: rgba(190, 140, 65, .55);
+
+            border-color:
+                rgba(190, 140, 65, .55);
+
+            pointer-events: none;
         }
+
 
         .corner.tl {
             top: 18px;
             left: 18px;
+
             border-top: 1px solid;
             border-left: 1px solid;
-            border-radius: 12px 0 0 0;
+
+            border-radius:
+                12px 0 0 0;
         }
+
 
         .corner.tr {
             top: 18px;
             right: 18px;
+
             border-top: 1px solid;
             border-right: 1px solid;
-            border-radius: 0 12px 0 0;
+
+            border-radius:
+                0 12px 0 0;
         }
+
 
         .corner.bl {
             bottom: 18px;
             left: 18px;
+
             border-bottom: 1px solid;
             border-left: 1px solid;
-            border-radius: 0 0 0 12px;
+
+            border-radius:
+                0 0 0 12px;
         }
+
 
         .corner.br {
             bottom: 18px;
             right: 18px;
+
             border-bottom: 1px solid;
             border-right: 1px solid;
-            border-radius: 0 0 12px 0;
+
+            border-radius:
+                0 0 12px 0;
         }
+
 
         /* =========================
            CONTENT
@@ -231,21 +344,33 @@
 
         .small-text {
             font-size: 11px;
+
             letter-spacing: 4px;
+
             text-transform: uppercase;
+
             color: #b48a4d;
+
             margin-bottom: 18px;
+
             font-weight: 500;
         }
 
+
         .heart-icon {
             font-size: 38px;
+
             margin-bottom: 12px;
-            animation: heartbeat 2s infinite;
+
+            animation:
+                heartbeat 2s infinite;
         }
 
+
         @keyframes heartbeat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
 
@@ -266,38 +391,71 @@
             }
         }
 
+
         h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(42px, 9vw, 68px);
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(42px, 9vw, 68px);
+
             line-height: .95;
+
             font-weight: 600;
+
             color: #633e50;
+
             margin-bottom: 15px;
         }
 
+
         .subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(21px, 4vw, 24px);
+
             color: #9b6c7d;
+
             margin-bottom: 25px;
         }
+
 
         .message {
             max-width: 430px;
-            margin: 0 auto 30px;
+
+            margin:
+                0 auto 30px;
+
             font-size: 13px;
+
             line-height: 1.9;
+
             color: #806471;
+
             font-weight: 300;
         }
 
+
         .mystery {
-            font-family: 'Cormorant Garamond', serif;
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
             font-size: 21px;
+
             color: #8d5b70;
+
             font-style: italic;
+
             margin-bottom: 25px;
+
+            line-height: 1.4;
         }
+
 
         /* =========================
            COUNTDOWN
@@ -305,68 +463,137 @@
 
         .countdown {
             display: flex;
+
             justify-content: center;
+
             gap: 10px;
-            margin: 20px auto 28px;
+
+            margin:
+                20px auto 28px;
+
+            width: 100%;
         }
+
 
         .time-box {
             min-width: 68px;
-            padding: 13px 8px;
-            background: rgba(255,255,255,.65);
-            border: 1px solid rgba(190,140,65,.25);
+
+            padding:
+                13px 8px;
+
+            background:
+                rgba(255, 255, 255, .65);
+
+            border:
+                1px solid rgba(190, 140, 65, .25);
+
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(130, 80, 100, .07);
+
+            box-shadow:
+                0 8px 20px
+                rgba(130, 80, 100, .07);
+
+            flex: 0 1 75px;
         }
+
 
         .time-number {
             font-size: 25px;
+
             font-weight: 600;
+
             color: #704759;
         }
 
+
         .time-label {
             font-size: 8px;
+
             letter-spacing: 2px;
+
             color: #b28b98;
+
             margin-top: 3px;
         }
+
 
         /* =========================
            BUTTON
         ========================= */
 
         .button {
-            display: inline-block;
-            padding: 14px 32px;
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 46px;
+
+            padding:
+                14px 32px;
+
             border-radius: 50px;
-            border: 1px solid rgba(190,140,65,.35);
-            background: linear-gradient(135deg, #d9a968, #c99353);
+
+            border:
+                1px solid rgba(190, 140, 65, .35);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d9a968,
+                    #c99353
+                );
+
             color: white;
+
             text-decoration: none;
+
             font-size: 12px;
+
             letter-spacing: 1px;
-            box-shadow: 0 10px 25px rgba(170,115,60,.25);
+
+            box-shadow:
+                0 10px 25px
+                rgba(170, 115, 60, .25);
+
             cursor: not-allowed;
+
             opacity: .55;
-            transition: .3s;
+
+            transition:
+                .3s;
+
+            max-width: 100%;
         }
+
 
         .button.active {
             cursor: pointer;
+
             opacity: 1;
         }
 
+
         .button.active:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(170,115,60,.35);
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(170, 115, 60, .35);
         }
+
 
         .locked {
             font-size: 10px;
+
             color: #aa8795;
+
             margin-top: 14px;
+
+            line-height: 1.5;
         }
+
 
         /* =========================
            FOOTER
@@ -374,56 +601,538 @@
 
         .footer {
             margin-top: 28px;
-            font-family: 'Cormorant Garamond', serif;
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
             font-size: 17px;
+
             color: #a27b89;
         }
+
 
         .footer span {
             color: #c69b55;
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
 
-        @media (max-width: 500px) {
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 600px) {
+
+            body {
+                /*
+                    HP tidak lagi dipaksa tepat di tengah.
+                    Kalau layar pendek, card bisa digeser.
+                */
+                align-items: flex-start;
+
+                justify-content: center;
+
+                overflow-y: auto;
+
+                padding:
+                    max(15px, env(safe-area-inset-top))
+                    0
+                    max(25px, env(safe-area-inset-bottom))
+                    0;
+            }
+
 
             .card {
-                padding: 42px 22px;
+                width:
+                    calc(100% - 28px);
+
+                max-width: 500px;
+
+                padding:
+                    40px 20px
+                    35px;
+
+                margin:
+                    18px auto 25px;
+
+                border-radius: 25px;
             }
+
+
+            /*
+                Sudut gold diperkecil sedikit
+                supaya tetap terlihat elegan.
+            */
+
+            .corner {
+                width: 35px;
+                height: 35px;
+            }
+
+
+            .corner.tl {
+                top: 13px;
+                left: 13px;
+            }
+
+
+            .corner.tr {
+                top: 13px;
+                right: 13px;
+            }
+
+
+            .corner.bl {
+                bottom: 13px;
+                left: 13px;
+            }
+
+
+            .corner.br {
+                bottom: 13px;
+                right: 13px;
+            }
+
+
+            .small-text {
+                font-size: 8px;
+
+                letter-spacing: 2.5px;
+
+                margin-bottom: 14px;
+
+                padding:
+                    0 25px;
+            }
+
+
+            .heart-icon {
+                font-size: 32px;
+
+                margin-bottom: 8px;
+            }
+
 
             h1 {
-                font-size: 46px;
+                font-size:
+                    clamp(43px, 15vw, 58px);
+
+                line-height: .9;
+
+                margin-bottom: 10px;
             }
+
 
             .subtitle {
-                font-size: 21px;
+                font-size:
+                    clamp(20px, 6vw, 24px);
+
+                margin-bottom: 20px;
             }
 
+
             .message {
-                font-size: 12px;
+                width: 100%;
+
+                max-width: 340px;
+
+                font-size: 11.5px;
+
+                line-height: 1.8;
+
+                margin-bottom: 20px;
+
+                padding:
+                    0 5px;
             }
+
+
+            .mystery {
+                font-size: 19px;
+
+                line-height: 1.35;
+
+                margin:
+                    0 auto 20px;
+
+                max-width: 320px;
+            }
+
+
+            /* COUNTDOWN HP */
 
             .countdown {
                 gap: 5px;
+
+                margin:
+                    16px auto 22px;
+
+                max-width: 340px;
             }
+
 
             .time-box {
-                min-width: 61px;
-                padding: 11px 5px;
+                min-width: 0;
+
+                width: 25%;
+
+                padding:
+                    10px 3px;
+
+                border-radius: 12px;
             }
 
+
             .time-number {
-                font-size: 21px;
+                font-size:
+                    clamp(19px, 6vw, 24px);
             }
+
+
+            .time-label {
+                font-size: 7px;
+
+                letter-spacing:
+                    1px;
+            }
+
+
+            /* BUTTON HP */
+
+            .button {
+                width: auto;
+
+                max-width: 90%;
+
+                padding:
+                    13px 25px;
+
+                font-size: 11px;
+
+                white-space: nowrap;
+            }
+
+
+            .locked {
+                font-size: 9px;
+
+                margin-top: 11px;
+            }
+
+
+            .footer {
+                margin-top: 22px;
+
+                font-size: 15px;
+            }
+
         }
+
+
+        /* ==================================================
+           HP KECIL
+           360 x 640 / 375 x 667
+        ================================================== */
+
+        @media (max-width: 380px) and (max-height: 700px) {
+
+            body {
+                padding:
+                    10px 0 20px;
+            }
+
+
+            .card {
+                width:
+                    calc(100% - 20px);
+
+                padding:
+                    30px 15px
+                    25px;
+
+                margin:
+                    10px auto 15px;
+
+                border-radius: 22px;
+            }
+
+
+            .corner {
+                width: 28px;
+                height: 28px;
+            }
+
+
+            .corner.tl {
+                top: 10px;
+                left: 10px;
+            }
+
+
+            .corner.tr {
+                top: 10px;
+                right: 10px;
+            }
+
+
+            .corner.bl {
+                bottom: 10px;
+                left: 10px;
+            }
+
+
+            .corner.br {
+                bottom: 10px;
+                right: 10px;
+            }
+
+
+            .small-text {
+                font-size: 7px;
+
+                letter-spacing: 2px;
+
+                margin-bottom: 10px;
+            }
+
+
+            .heart-icon {
+                font-size: 27px;
+
+                margin-bottom: 5px;
+            }
+
+
+            h1 {
+                font-size: 42px;
+
+                margin-bottom: 7px;
+            }
+
+
+            .subtitle {
+                font-size: 19px;
+
+                margin-bottom: 14px;
+            }
+
+
+            .message {
+                font-size: 10.5px;
+
+                line-height: 1.65;
+
+                margin-bottom: 14px;
+            }
+
+
+            .mystery {
+                font-size: 17px;
+
+                margin-bottom: 14px;
+            }
+
+
+            .countdown {
+                gap: 4px;
+
+                margin:
+                    12px auto 17px;
+            }
+
+
+            .time-box {
+                padding:
+                    8px 2px;
+
+                border-radius: 10px;
+            }
+
+
+            .time-number {
+                font-size: 18px;
+            }
+
+
+            .time-label {
+                font-size: 6px;
+
+                letter-spacing:
+                    .7px;
+            }
+
+
+            .button {
+                min-height: 42px;
+
+                padding:
+                    11px 20px;
+
+                font-size: 10px;
+            }
+
+
+            .locked {
+                font-size: 8px;
+
+                margin-top: 9px;
+            }
+
+
+            .footer {
+                margin-top: 16px;
+
+                font-size: 14px;
+            }
+
+        }
+
+
+        /* ==================================================
+           LANDSCAPE HP
+        ================================================== */
+
+        @media (max-height: 560px) and (orientation: landscape) {
+
+            body {
+                align-items: flex-start;
+
+                overflow-y: auto;
+            }
+
+
+            .card {
+                width:
+                    min(90%, 600px);
+
+                padding:
+                    25px 30px
+                    30px;
+
+                margin:
+                    15px auto 25px;
+            }
+
+
+            .small-text {
+                margin-bottom: 8px;
+            }
+
+
+            .heart-icon {
+                font-size: 27px;
+
+                margin-bottom: 5px;
+            }
+
+
+            h1 {
+                font-size: 43px;
+
+                margin-bottom: 7px;
+            }
+
+
+            .subtitle {
+                font-size: 19px;
+
+                margin-bottom: 12px;
+            }
+
+
+            .message {
+                font-size: 10.5px;
+
+                line-height: 1.6;
+
+                margin-bottom: 12px;
+            }
+
+
+            .mystery {
+                font-size: 17px;
+
+                margin-bottom: 12px;
+            }
+
+
+            .countdown {
+                margin:
+                    10px auto 15px;
+            }
+
+
+            .time-box {
+                padding:
+                    8px 6px;
+            }
+
+
+            .time-number {
+                font-size: 19px;
+            }
+
+
+            .footer {
+                margin-top: 15px;
+            }
+
+        }
+
+
+        /* ==================================================
+           DEVICE MODE / SCREEN PENDEK
+        ================================================== */
+
+        @media (max-height: 650px) {
+
+            .card {
+                padding-top: 28px;
+                padding-bottom: 28px;
+            }
+
+
+            .small-text {
+                margin-bottom: 10px;
+            }
+
+
+            .heart-icon {
+                margin-bottom: 7px;
+            }
+
+
+            .message {
+                margin-bottom: 18px;
+            }
+
+
+            .mystery {
+                margin-bottom: 16px;
+            }
+
+
+            .countdown {
+                margin-top: 12px;
+                margin-bottom: 18px;
+            }
+
+
+            .footer {
+                margin-top: 18px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
+
     <!-- Sparkles -->
+
     <div class="sparkle"></div>
     <div class="sparkle"></div>
     <div class="sparkle"></div>
@@ -431,11 +1140,16 @@
     <div class="sparkle"></div>
     <div class="sparkle"></div>
 
+
     <!-- Floating Hearts -->
+
     <div class="heart">♡</div>
     <div class="heart">♡</div>
     <div class="heart">♡</div>
     <div class="heart">♡</div>
+
+
+    <!-- MAIN CARD -->
 
     <div class="card">
 
@@ -444,66 +1158,116 @@
         <div class="corner bl"></div>
         <div class="corner br"></div>
 
+
         <div class="small-text">
             A little secret for
         </div>
+
 
         <div class="heart-icon">
             ♡
         </div>
 
+
         <h1>
             Alida
         </h1>
 
+
         <div class="subtitle">
             Ayuna Iskandar
         </div>
+
 
         <p class="message">
             Ada sesuatu yang sudah disiapkan khusus untuk seseorang
             yang akan segera memasuki usia <b>20 tahun</b>.
         </p>
 
+
         <div class="mystery">
             “Tapi... belum boleh dibuka sekarang.”
         </div>
 
+
+        <!-- COUNTDOWN -->
+
         <div class="countdown">
 
             <div class="time-box">
-                <div class="time-number" id="days">00</div>
-                <div class="time-label">HARI</div>
+                <div class="time-number" id="days">
+                    00
+                </div>
+
+                <div class="time-label">
+                    HARI
+                </div>
             </div>
 
-            <div class="time-box">
-                <div class="time-number" id="hours">00</div>
-                <div class="time-label">JAM</div>
-            </div>
 
             <div class="time-box">
-                <div class="time-number" id="minutes">00</div>
-                <div class="time-label">MENIT</div>
+                <div class="time-number" id="hours">
+                    00
+                </div>
+
+                <div class="time-label">
+                    JAM
+                </div>
             </div>
 
+
             <div class="time-box">
-                <div class="time-number" id="seconds">00</div>
-                <div class="time-label">DETIK</div>
+                <div class="time-number" id="minutes">
+                    00
+                </div>
+
+                <div class="time-label">
+                    MENIT
+                </div>
+            </div>
+
+
+            <div class="time-box">
+                <div class="time-number" id="seconds">
+                    00
+                </div>
+
+                <div class="time-label">
+                    DETIK
+                </div>
             </div>
 
         </div>
 
-        <a id="openButton" class="button">
+
+        <!-- BUTTON -->
+
+        <a
+            id="openButton"
+            class="button">
+
             ✨ Buka Kejutan
+
         </a>
 
-        <div class="locked" id="lockedText">
+
+        <div
+            class="locked"
+            id="lockedText">
+
             🔒 Masih terkunci... sabar sedikit ya.
+
         </div>
 
+
         <div class="footer">
-            Made with <span>♡</span> for Alida
+
+            Made with
+            <span>♡</span>
+            for Alida
+
         </div>
+
 
     </div>
 
